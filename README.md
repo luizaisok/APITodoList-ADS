@@ -1,2 +1,3 @@
-# APITodoList-ADS
-Criando API para sistema ToDo-List para a matéria de Tópicos Especiais de Sistemas com o prof Alex
+## Trabalho para a matéria de Tópicos Especiais de Sistemas (Professor Alex Nunes) - *Em andamento*
+
+Objetivo: Desenvolver uma API para um sistema de Lista de Tarefas
