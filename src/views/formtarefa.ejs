@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Tarefa</title>
+</head>
+<body>
+    <h1>Criar Tarefa</h1>
+    <h3>Crie uma nova tarefa:</h3>
+    <form action="<%= tarefa.id ? '/tarefa/' + tarefa.id + '?_method=PUT' : '/tarefa' %>" method="post">
+        <input type="hidden" name="id" value="<%= tarefa.id %>">
+        <div class="mb-3">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" value="<%= tarefa.titulo %>" required> 
+        </div>
+        <div class="mb-3">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" value="<%= tarefa.descricao %>"  required>
+        </div>
+        <div class="mb-3">
+            <label for="data_vencimento">Data de Vencimento</label>
+            <input type="text" id="data_vencimento" name="data_vencimento" value="<%= tarefa.data_vencimento %>"  required> 
+        </div>
+        <div class="mb-3">
+            <label for="status">Status</label>
+            <input type="text" id="status" name="status" value="<%= tarefa.status %>" required>
+        </div>
+        <input type="submit">
+    </form>
+</body>
+</html>

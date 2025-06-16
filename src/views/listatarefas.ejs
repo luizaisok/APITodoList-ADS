@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+</head>
+<body>
+    <h1>ToDo List / Lista de Tarefas</h1>
+    <h3>Organize suas tarefas</h3>
+    <a href="/criartarefa" class="btn">Adicionar Tarefa</a>
+    <table>
+        <thead>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Data de Vencimento</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </thead>
+        <tbody>
+            <% tarefasDoController.forEach((tarefa) => { %>
+                <tr>
+                    <td><%= tarefa.id %></td>
+                    <td><%= tarefa.titulo %></td>
+                    <td><%= tarefa.descricao %></td>
+                    <td><%= tarefa.data_vencimento %></td>
+                    <td><%= tarefa.status %></td>
+                    <td>
+                        <form action="/editartarefa/<%= tarefa.id %>?_method=PUT" method="POST" style="display:inline;">
+                            <button type="submit">Editar</button>
+                        </form>
+                        <form action="/tarefa/<%= tarefa.id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
